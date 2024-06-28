@@ -7,4 +7,6 @@ while True:
     i = (i+n)%len(m)-bool((i+n)%len(m))
     if m[i:i+n][0] == m[0]:
         print('\nresult = ',result)
+        if len(m)%2!=0:
+            result.append(m[-1])     
         break

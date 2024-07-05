@@ -1,4 +1,4 @@
-import importlib 
+
 def dot_detection(mod_c, mod_coor):
 
     for dot in mod_coor.dot_coords:

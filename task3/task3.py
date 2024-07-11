@@ -1,4 +1,5 @@
 import json
+import sys
 
 def func(values_file, tests_file, report_file):
     valuess = dict()
@@ -36,9 +37,12 @@ def func(values_file, tests_file, report_file):
         json.dump(report_dict, report)
         report.truncate()
 
-
-if __name__ == '__main__': 
-    values_file = input('Введите фаил значений (values): ')
-    tests_file = input('Введите фаил формы (tests): ')
-    report_file = input('Введите фаил заполнения (report): ')
-    func(values_file, tests_file, report_file)
+    
+if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        print("Usage: python task3.py <values_file> <tests_file> <report_file>")
+        sys.exit(1)
+    arg1 = sys.argv[1]
+    arg2 = sys.argv[2]
+    arg3 = sys.argv[3]
+    func(arg1, arg2, arg3)

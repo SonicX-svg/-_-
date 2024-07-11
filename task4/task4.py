@@ -1,3 +1,5 @@
+import sys
+
 def min_steps(txt_file):
     with open(txt_file) as file:
         data = file.read()
@@ -10,5 +12,8 @@ def min_steps(txt_file):
     return f'Наименьшее количество шагов = {sum(result)}'
     
 if __name__ == '__main__': 
-    txt_file = input('Введите фаил значений: ')
+    if len(sys.argv) != 2:
+        print("Usage: python task4.py <фаил значений>")
+        sys.exit(1)
+    txt_file = sys.argv[1]
     print(min_steps(txt_file))
